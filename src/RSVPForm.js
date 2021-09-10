@@ -14,7 +14,20 @@ function RSVPForm() {
     event.preventDefault();
     setFormData({ ...initialFormState });
   };
-  return <form onSubmit={handleSubmit}></form>;
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">
+        Name
+        <input
+          id="name"
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={formData.name}
+        />
+      </label>
+    </form>
+  );
 }
 
 export default RSVPForm;
