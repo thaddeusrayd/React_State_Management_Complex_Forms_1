@@ -10,6 +10,11 @@ function RSVPForm() {
       [target.name]: value,
     });
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setFormData({ ...initialFormState });
+  };
+  return <form onSubmit={handleSubmit}></form>;
 }
 
 export default RSVPForm;
