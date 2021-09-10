@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
 function RSVPForm() {
-  const initialFormState = {};
+  const initialFormState = {
+    name: "",
+    age: "",
+  };
   const [formData, setFormData] = useState({ ...initialFormState });
   const handleChange = ({ target }) => {
     const value = target.type === "checkbox" ? target.checked : target.value;
@@ -25,6 +28,22 @@ function RSVPForm() {
           onChange={handleChange}
           value={formData.name}
         />
+      </label>
+      <br />
+      <label htmlFor="age">
+        Age
+        <select
+          id="age"
+          name="age"
+          onChange={handleChange}
+          value={formData.age}
+        >
+          <option value="">Prefer not to say</option>
+          <option value="low">0-19</option>
+          <option value="middle">20-39</option>
+          <option value="high">40-59</option>
+          <option value="senior">60+</option>
+        </select>
       </label>
     </form>
   );
