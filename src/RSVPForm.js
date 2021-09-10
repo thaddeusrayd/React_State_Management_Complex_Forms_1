@@ -17,6 +17,7 @@ function RSVPForm() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData.name, formData.age, formData.new, formData.comment);
     setFormData({ ...initialFormState });
   };
   return (
@@ -70,6 +71,8 @@ function RSVPForm() {
           value={formData.comment}
         />
       </label>
+      <br />
+      <button type="submit">Submit</button>
     </form>
   );
 }
