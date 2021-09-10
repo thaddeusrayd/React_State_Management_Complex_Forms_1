@@ -5,6 +5,7 @@ function RSVPForm() {
     name: "",
     age: "",
     new: false,
+    comment: "",
   };
   const [formData, setFormData] = useState({ ...initialFormState });
   const handleChange = ({ target }) => {
@@ -56,6 +57,17 @@ function RSVPForm() {
           onChange={handleChange}
           checked={formData.new}
           value="new"
+        />
+      </label>
+      <br />
+      <label htmlFor="comment">
+        Comment
+        <input
+          id="comment"
+          type="text"
+          name="comment"
+          onChange={handleChange}
+          value={formData.comment}
         />
       </label>
     </form>
